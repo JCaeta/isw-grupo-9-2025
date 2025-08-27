@@ -6,6 +6,7 @@
 | TP | Trabajo Practico |
 | TS | Testing de software|
 | ISW | Ingenieria de Software |
+| R | Resumen |
 
 
 
