@@ -12,3 +12,9 @@
 | Ledesma, Ignacio | 78498 |
 | Dorado, Kevin | 90179 |
 | Bernahola, Rodrigo | 87479 |
+
+___
+
+Criterio de Linea Base
+Se define como criterio de linea base el momento de recepcion de correccion de cada TP, con su respectiva documentacion, código e items de configuracion que se hubieran desarrollado en el transcurso de los límites de tiempo definidos por la cátedra.
+
