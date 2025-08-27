@@ -15,7 +15,22 @@
 
 ___
 
-#Criterio de Linea Base:
+# Criterio de Linea Base
 Se define como criterio de linea base el momento de recepcion de correccion de cada TP, con su respectiva documentacion, código e items de configuracion que se hubieran desarrollado en el transcurso de los límites de tiempo definidos por la cátedra.
+
+___
+
+## Convenciones de commits
+
+- Indicar siempre en el commit message si se trata de:
+  - **Agregar** (`add:`)
+  - **Actualizar / Mejorar** (`update:`)
+  - **Eliminar** (`remove:`)
+- Usar **verbos en presente**.
+- El commit message debe ser claro sobre el documento, item de configuracion, codigo, etc sobre el que se actua.
+- El commit message debe terminar con el nombre completo del documento modificado.
+- Escribir la descripción en **español** y de forma **concisa**.
+- Ejemplo: Update: 'message' README.md -:- Descripcion: Descripcion concisa en español.
+
 
 
