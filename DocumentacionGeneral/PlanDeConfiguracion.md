@@ -5,6 +5,7 @@
 | Reglas de juego | RDJ_< nombre > . pdf|/ReglasDeJuego|
 | TPs | TP< numero > _ < titulo > . pdf|/TPs|
 | Resumenes | R< titulo > .pdf |/Resumenes|
+| Bibliografia | Bibliografia_<nombre>_<autor>.pdf |/Resumenes|
 
 
 
