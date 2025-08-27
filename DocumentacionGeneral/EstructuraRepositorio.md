@@ -6,6 +6,7 @@ Este repositorio contiene los trabajos prácticos y materiales del grupo 9 para 
 
 ## Estructura
 
+```
 isw-grupo-9-2025/
 ├── DocumentacionGeneral/                # Documentación general del proyecto
 │   ├── EstructuraRepositorio.md         # Este archivo
@@ -71,3 +72,4 @@ isw-grupo-9-2025/
     └── Presentaciones/                  # Presentaciones de clases
         ├── 00_IntroducciónALaIngenieriaDeSoftware.pdf
         └── 01_SCM.pdf
+```
