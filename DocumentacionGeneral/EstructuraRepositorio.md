@@ -1,7 +1,6 @@
 # Estructura del Repositorio grupo 9
 
 ## Descripción
-
 Este repositorio contiene los trabajos prácticos y materiales del grupo 9 para la materia Ingeniería de Software (ISW) de la Universidad Tecnológica Nacional, ciclo 2025. Incluye documentación general, trabajos prácticos, resúmenes y materiales de estudio organizados por unidad temática.
 
 ## Estructura

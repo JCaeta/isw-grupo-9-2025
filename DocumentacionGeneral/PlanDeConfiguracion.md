@@ -1,4 +1,4 @@
-# Items de configuración
+## Items de configuración
 
 | Item de configuración | Regla de nombrado | Ubicación |
 | --------------------- | ----------------- | -------------------------------------------------------- |
@@ -7,8 +7,6 @@
 | Resumenes | R< titulo > .pdf |/Resumenes|
 | Bibliografia | Bibliografia_< nombre >_< autor >.pdf |/Teorico/Bibliografia/< tema >|
 | Presentaciones | < nro de presentacion >_< tema >.pdf |/Teorico/Presentaciones|
-
-
 
 
 
