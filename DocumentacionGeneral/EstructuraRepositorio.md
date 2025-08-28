@@ -31,6 +31,8 @@ isw-grupo-9-2025/
 │   │   ├── README.md
 │   │   └── links.md
 │   ├── TP4 - SCM - Herramientas de SCM/
+│   │   ├── CMP-LescanoTomas-v_01.pdf
+│   │   ├── Enunciado.pdf
 │   │   ├── README.md
 │   │   └── links.md
 │   ├── TP5 - SCM - Uso del repositorio/
