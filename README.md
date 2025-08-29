@@ -5,7 +5,7 @@
 | Muñoz Faya, Sofia | 89949 |
 | Aldao, Ignacio | 90020 |
 | Alem, Juan | 95698 |
-| Ociedo, Cristian Nicolas | 99666 |
+| Oviedo, Cristian Nicolas | 99666 |
 | Blanco, Lisandro | 60634 |
 | Lescano, Tomas | 96124 |
 | Caetano, Joaquin | 76489|
@@ -51,4 +51,5 @@ ___
   ```text
   Update: Corregir bug en la navegación de la aplicación
   ```
+
 
