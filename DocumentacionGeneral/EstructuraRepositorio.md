@@ -69,6 +69,9 @@ isw-grupo-9-2025/
 └── Teorico/                             # Material teórico de la materia
     ├── Bibliografia/                    # Bibliografía por temática
     │   ├── ISW/                         # Material de Ingeniería de Software
+    │   ├── LeanKanban/                  # Material de Lean y Kanban
+    │   ├── PA/                          # Material de Pensamiento Agil
+    │   ├── SCM/                         # Material de SCM
     │   └── TS/                          # Material de Testing
     └── Presentaciones/                  # Presentaciones de clases
         ├── 00_IntroducciónALaIngenieriaDeSoftware.pdf
