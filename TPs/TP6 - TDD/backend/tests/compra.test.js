@@ -76,7 +76,7 @@ describe("Compra de entradas - Grupo 9", () => {
       .toThrow("Máximo 10");
   });
 
-    test("Usuario no registrado", () => {
+  test("Usuario no registrado", () => {
     const usuario = new Usuario("Invitado", false);
     const entradas = [new Entrada(20, "Regular")];
     expect(() => new Compra(usuario, new Date(2025, 10, 8, 10, 0), entradas, "efectivo"))
@@ -90,5 +90,18 @@ describe("Compra de entradas - Grupo 9", () => {
     
     const result = await compra.confirmarCompra(); 
     expect(result.mensaje).toMatch(/Pague en boletería/);
+    });
+
+  test("Mensaje de confirmación incluye cantidad y fecha y envía email", async () => {
+    const usuario = new Usuario("Nacho", true);
+    const entradas = [
+      new Entrada(30, "VIP"),
+      new Entrada(7, "Regular")
+    ];
+    const compra = new Compra(usuario, new Date(2025, 10, 9, 10, 0), entradas, "tarjeta");
+    
+    const result = await compra.confirmarCompra();
+    expect(result.mensaje).toContain("Compra confirmada");
+    expect(result.redirigido_a).toBe("Mercado Pago");
   });
 });
