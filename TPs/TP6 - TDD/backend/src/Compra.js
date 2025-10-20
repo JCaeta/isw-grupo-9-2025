@@ -26,6 +26,10 @@ class Compra {
     if (esFestivo) {
       throw new Error("Parque cerrado por feriado");
     }
+    const hora = this.fechaVisita.getHours();
+    if (hora < 9 || hora >= 19) {
+      throw new Error("El parque está cerrado en ese horario (9 a 19 hs)");
+    }
   }
 }
 
