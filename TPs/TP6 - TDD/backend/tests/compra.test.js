@@ -53,4 +53,21 @@ describe("Compra de entradas - Grupo 9", () => {
     expect(() => compra.validarFecha()).toThrow("Parque cerrado");
   });
 
+  test("No puede comprar fuera del horario permitido (antes de 9:00 o después de 19:00)", () => {
+  const usuario = new Usuario("Nacho", true);
+  const entradas = [new Entrada(30, "Regular")];
+  const casos = [
+    ["antes de las 9:00 hs", 8, 30],
+    ["después de las 19:00 hs", 19, 15]
+  ];
+
+  casos.forEach(([descripcion, hora, minuto]) => {
+    const fecha = new Date(2025, 10, 9, hora, minuto);
+    const compra = new Compra(usuario, fecha, entradas, "tarjeta");
+
+    expect(() => compra.validarFecha()).toThrow("cerrado en ese horario");
+  });
+});
+
+
 });
