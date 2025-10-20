@@ -83,4 +83,12 @@ describe("Compra de entradas - Grupo 9", () => {
       .toThrow("registrado");
   });
   
+  test("Pago en efectivo muestra mensaje de boletería y envía email", async () => {
+    const usuario = new Usuario("Nacho", true);
+    const entradas = [new Entrada(25, "Regular")];
+    const compra = new Compra(usuario, new Date(2025, 10, 9, 10, 0), entradas, "efectivo");
+    
+    const result = await compra.confirmarCompra(); 
+    expect(result.mensaje).toMatch(/Pague en boletería/);
+  });
 });
