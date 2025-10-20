@@ -1,6 +1,8 @@
 class Compra {
   constructor(usuario, fechaVisita, entradas, metodoPago) {
-
+    if (!usuario?.registrado) {
+      throw new Error("El usuario debe estar registrado");
+    }
     if (!entradas || entradas.length === 0) {
       throw new Error("Debe seleccionar al menos una entrada");
     }
