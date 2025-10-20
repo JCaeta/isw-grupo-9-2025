@@ -56,7 +56,13 @@ class Compra {
 
     let respuesta = {};
 
-    if (this.metodoPago === "efectivo") {
+    if (this.metodoPago === "tarjeta") {
+      respuesta = {
+        mensaje: "Compra confirmada",
+        redirigido_a: "Mercado Pago",
+        total
+      };
+    } else if (this.metodoPago === "efectivo") {
       respuesta = {
         mensaje: `Pague en boletería. ${mensajeBase}`,
         total
