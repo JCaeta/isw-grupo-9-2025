@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHarmony Park - Compra de Entradas</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Agregando formas decorativas -->
+    <div class="leaf-decoration leaf-1"></div>
+    <div class="leaf-decoration leaf-2"></div>
+    <div class="tree-decoration"></div>
+    
+    <div class="container">
+        <div class="compra-card">
+            <div class="header">
+                <div class="logo-container">
+                    <div class="logo-circle">🦁</div>
+                </div>
+                <h1>Compra de Entradas</h1>
+                <p id="welcomeMessage" class="welcome-text"></p>
+            </div>
+            
+            <form id="compraForm" class="form">
+                <div class="form-group">
+                    <label for="fechaVisita">📅 Fecha de Visita</label>
+                    <input type="date" id="fechaVisita" name="fechaVisita" required>
+                    <small class="form-hint">El parque está cerrado los lunes y en días festivos (25/12 y 1/1)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="horaVisita">🕐 Hora de Visita</label>
+                    <input type="time" id="horaVisita" name="horaVisita" min="09:00" max="19:00" value="10:00" required>
+                    <small class="form-hint">Horario de atención: 9:00 AM - 7:00 PM</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cantidadEntradas">🎫 Cantidad de Entradas (máximo 10)</label>
+                    <input type="number" id="cantidadEntradas" name="cantidadEntradas" min="1" max="10" value="1" required>
+                </div>
+                
+                <div id="entradasContainer"></div>
+                
+                <div id="errorMessage" class="error-message"></div>
+                
+                <div class="total-section">
+                    <div class="total-content">
+                        <span>Total a Pagar:</span>
+                        <span class="total-amount">$<span id="totalPrecio">0</span></span>
+                    </div>
+                </div>
+                
+                <button type="button" id="btnContinuar" class="btn btn-primary">Continuar al Pago</button>
+            </form>
+            
+            <div id="pagoSection" class="pago-section" style="display: none;">
+                <h2>Seleccione Método de Pago</h2>
+                <div class="pago-options">
+                    <button type="button" class="btn btn-pago" onclick="procesarPago('efectivo')">
+                        <span class="pago-icon">💵</span>
+                        <span class="pago-text">
+                            <strong>Efectivo en Boletería</strong>
+                            <small>Pague al llegar al parque</small>
+                        </span>
+                    </button>
+                    <button type="button" class="btn btn-pago" onclick="procesarPago('tarjeta')">
+                        <span class="pago-icon">💳</span>
+                        <span class="pago-text">
+                            <strong>Mercado Pago</strong>
+                            <small>Pago en línea seguro</small>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Importando las clases del backend adaptadas -->
+    <script src="../javascript/models/Usuario.js"></script>
+    <script src="../javascript/models/Entrada.js"></script>
+    <script src="../javascript/models/Compra.js"></script>
+    <script src="../javascript/compra.js"></script>
+</body>
+</html>
