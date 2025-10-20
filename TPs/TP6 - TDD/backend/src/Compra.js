@@ -1,6 +1,13 @@
 class Compra {
   constructor(usuario, fechaVisita, entradas, metodoPago) {
 
+    if (!entradas || entradas.length === 0) {
+      throw new Error("Debe seleccionar al menos una entrada");
+    }
+    if (entradas.length > 10) {
+      throw new Error("Máximo 10 entradas por compra");
+    }
+
     this.usuario = usuario;
     this.fechaVisita = fechaVisita;
     this.entradas = entradas;
