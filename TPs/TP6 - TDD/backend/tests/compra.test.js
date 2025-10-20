@@ -21,4 +21,32 @@ describe("Compra de entradas - Grupo 9", () => {
     expect(entradaGratis.calcularPrecio()).toBe(0);
     expect(entradaMayor.calcularPrecio()).toBe(5000); // mitad del VIP
   });
+
+  test("Test para crear una compra", () => {
+  const usuario = new Usuario("Nacho", true);
+  const entradas = [
+    new Entrada(25, "Regular"),
+    new Entrada(8, "VIP")
+  ];
+  const fechaVisita = new Date(2025, 10, 9, 10, 0); // Domingo 9/11/2025 - 10:00hs
+  const metodoPago = "tarjeta";
+
+  const compra = new Compra(usuario, fechaVisita, entradas, metodoPago);
+
+  // Verificar que sea instancia de Compra
+  expect(compra).toBeInstanceOf(Compra);
+
+  // Verificar propiedades principales
+  expect(compra.usuario).toBe(usuario);
+  expect(compra.fechaVisita).toBe(fechaVisita);
+  expect(compra.entradas).toEqual(entradas);
+  expect(compra.metodoPago).toBe(metodoPago);
+
+  // Verificar cantidad de entradas
+  expect(compra.entradas.length).toBe(2);
+
+  // Verificar que usuario esté registrado
+  expect(compra.usuario.registrado).toBe(true);
+});
+
 });
