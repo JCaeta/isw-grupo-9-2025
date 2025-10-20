@@ -1,6 +1,6 @@
-const Usuario = require("../src/models/Usuario");
+//const Usuario = require("../src/models/Usuario");
 const Entrada = require("../src/models/Entrada");
-const Compra = require("../src/Compra");
+//const Compra = require("../src/Compra");
 
 describe("Compra de entradas - Grupo 9", () => {
     test("Test para crear una entrada", () => {
