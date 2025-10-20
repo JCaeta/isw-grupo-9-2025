@@ -1,3 +1,5 @@
+const { enviarEmailConfirmacion } = require("./emailService.js");
+
 class Compra {
   constructor(usuario, fechaVisita, entradas, metodoPago) {
     if (!usuario?.registrado) {
@@ -39,6 +41,38 @@ class Compra {
     if (hora < 9 || hora >= 19) {
       throw new Error("El parque está cerrado en ese horario (9 a 19 hs)");
     }
+    }
+    calcularTotal() {
+        this.validarFecha();
+        return this.entradas.reduce((acc, e) => acc + e.calcularPrecio(), 0);
+    }
+
+  async confirmarCompra() {
+    this.validarFecha();
+    const total = this.calcularTotal();
+    const cantidad = this.entradas.length;
+    const fecha = this.fechaVisita.toISOString().split("T")[0];
+    const mensajeBase = `Has comprado ${cantidad} entradas para el día ${fecha}. Total: $${total}.`;
+
+    let respuesta = {};
+
+    if (this.metodoPago === "efectivo") {
+      respuesta = {
+        mensaje: `Pague en boletería. ${mensajeBase}`,
+        total
+      };
+    } else {
+      throw new Error("Debe seleccionar un método de pago válido");
+    }
+
+    const info = await enviarEmailConfirmacion(
+      `${this.usuario.nombre}@gmail.com`,
+      "Confirmación de compra - EcoHarmony Park",
+      `${mensajeBase}\nMétodo de pago: ${this.metodoPago}`
+    );
+
+    respuesta.emailEnviado = info?.response || info?.accepted || "No info";
+    return respuesta;
   }
 }
 
