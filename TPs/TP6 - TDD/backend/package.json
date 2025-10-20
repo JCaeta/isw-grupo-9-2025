@@ -1,10 +1,21 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
+    "express": "^5.1.0",
     "jest": "^30.2.0",
     "nodemailer": "^7.0.9"
   },
   "scripts": {
-    "test": "jest"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }

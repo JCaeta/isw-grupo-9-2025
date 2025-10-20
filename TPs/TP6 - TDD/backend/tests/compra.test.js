@@ -1,8 +1,19 @@
+const { mockUsers, mockEntradas, mockCompras } = require('../src/mocks/mockData');
 const Usuario = require("../src/models/Usuario");
 const Entrada = require("../src/models/Entrada");
 const Compra = require("../src/Compra");
 
+jest.mock('../src/emailService', () => ({
+  enviarEmailConfirmacion: jest.fn().mockResolvedValue({ 
+    messageId: 'test-message-id',
+    accepted: ['test@email.com']
+  })
+}));
+
 describe("Compra de entradas - Grupo 9", () => {
+    beforeEach(() => {
+        mockCompras.length = 0; // Reset mock data
+    });
     test("Test para crear una entrada", () => {
     const entrada = new Entrada(25, "VIP");
     expect(entrada).toBeInstanceOf(Entrada);
