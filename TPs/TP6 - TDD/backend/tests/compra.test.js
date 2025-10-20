@@ -66,8 +66,14 @@ describe("Compra de entradas - Grupo 9", () => {
     const compra = new Compra(usuario, fecha, entradas, "tarjeta");
 
     expect(() => compra.validarFecha()).toThrow("cerrado en ese horario");
+    });
   });
-});
 
+  test("No puede comprar más de 10 entradas", () => {
+    const usuario = new Usuario("Nacho", true);
+    const entradas = Array(11).fill(new Entrada(20, "Regular"));
+    expect(() => new Compra(usuario, new Date(2025, 10, 8, 10, 0), entradas, "tarjeta"))
+      .toThrow("Máximo 10");
+  });
 
 });
