@@ -44,6 +44,13 @@ describe("Compra de entradas - Grupo 9", () => {
 
   // Verificar cantidad de entradas
   expect(compra.entradas.length).toBe(2);
-});
+  });
+
+  test("No puede comprar lunes o dia festivo (día cerrado)", () => {
+    const usuario = new Usuario("Nacho", true);
+    const entradas = [new Entrada(30, "Regular")];
+    const compra = new Compra(usuario, new Date(2025, 10, 10, 10, 0), entradas, "efectivo");
+    expect(() => compra.validarFecha()).toThrow("Parque cerrado");
+  });
 
 });
