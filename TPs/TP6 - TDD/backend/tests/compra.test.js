@@ -76,4 +76,11 @@ describe("Compra de entradas - Grupo 9", () => {
       .toThrow("Máximo 10");
   });
 
+    test("Usuario no registrado", () => {
+    const usuario = new Usuario("Invitado", false);
+    const entradas = [new Entrada(20, "Regular")];
+    expect(() => new Compra(usuario, new Date(2025, 10, 8, 10, 0), entradas, "efectivo"))
+      .toThrow("registrado");
+  });
+  
 });
