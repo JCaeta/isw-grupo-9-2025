@@ -3,7 +3,7 @@ const Usuario = require("../src/models/Usuario");
 const Entrada = require("../src/models/Entrada");
 const Compra = require("../src/Compra");
 
-jest.mock('../src/emailService', () => ({
+jest.mock('../src/emailService.js', () => ({
   enviarEmailConfirmacion: jest.fn().mockResolvedValue({ 
     messageId: 'test-message-id',
     accepted: ['test@email.com']

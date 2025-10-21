@@ -1,3 +1,5 @@
+const maxEntradas = 10;
+
 class Compra {
   constructor(usuario, fechaVisita, entradas, metodoPago) {
     if (!usuario?.registrado) {
@@ -6,7 +8,7 @@ class Compra {
     if (!entradas || entradas.length === 0) {
       throw new Error("Debe seleccionar al menos una entrada")
     }
-    if (entradas.length > 10) {
+    if (entradas.length > maxEntradas) {
       throw new Error("Máximo 10 entradas por compra")
     }
 
@@ -25,7 +27,7 @@ class Compra {
 
     // Validar que no sea lunes
     if (diaSemana === 1) {
-      throw new Error("Parque cerrado los lunes")
+      throw new Error("Parque cerrado los dias Lunes. Seleccione otra fecha")
     }
 
     // Validar días festivos
@@ -33,13 +35,13 @@ class Compra {
       (f) => f.dia === this.fechaVisita.getDate() && f.mes === this.fechaVisita.getMonth() + 1,
     )
     if (esFestivo) {
-      throw new Error("Parque cerrado por feriado")
+      throw new Error("Parque cerrado por dia festivo. Seleccione otra fecha")
     }
 
     // Validar horario (9:00 - 19:00)
     const hora = this.fechaVisita.getHours()
     if (hora < 9 || hora >= 19) {
-      throw new Error("El parque está cerrado en ese horario (Abierto 9 a 19 hs)")
+      throw new Error("El parque está cerrado en ese horario (Abierto 9:00 a 19:00)")
     }
   }
 

@@ -3,6 +3,8 @@ if (!nombreUsuario) {
   window.location.href = "../index.html"
 }
 
+const max_entradas = 10
+
 // Crear instancia de Usuario registrado
 const usuarioActual = new Usuario(nombreUsuario, true)
 
@@ -120,12 +122,12 @@ document.getElementById("btnContinuar").addEventListener("click", function () {
     fechaHoy.setHours(0, 0, 0, 0)
 
     if (fechaCompleta < fechaHoy) {
-      throw new Error("La fecha de visita no puede ser anterior a hoy")
+      throw new Error("La fecha de visita no puede ser anterior al dia de hoy")
     }
 
     // Validar cantidad de entradas
     const cantidad = Number.parseInt(document.getElementById("cantidadEntradas").value)
-    if (cantidad < 1 || cantidad > 10) {
+    if (cantidad < 1 || cantidad > max_entradas) {
       throw new Error("Debe comprar entre 1 y 10 entradas")
     }
 

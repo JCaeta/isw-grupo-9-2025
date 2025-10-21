@@ -1,5 +1,7 @@
 const { enviarEmailConfirmacion } = require("./emailService.js");
 
+const MAX_ENTRADAS = 10;
+
 class Compra {
   constructor(usuario, fechaVisita, entradas, metodoPago) {
     if (!usuario?.registrado) {
@@ -8,7 +10,7 @@ class Compra {
     if (!entradas || entradas.length === 0) {
       throw new Error("Debe seleccionar al menos una entrada");
     }
-    if (entradas.length > 10) {
+    if (entradas.length > MAX_ENTRADAS) {
       throw new Error("Máximo 10 entradas por compra");
     }
 
@@ -39,7 +41,7 @@ class Compra {
     }
     const hora = this.fechaVisita.getHours();
     if (hora < 9 || hora >= 19) {
-      throw new Error("El parque está cerrado en ese horario (9 a 19 hs)");
+      throw new Error("El parque está cerrado en ese horario (9:00 a 19:00)");
     }
     }
     calcularTotal() {
