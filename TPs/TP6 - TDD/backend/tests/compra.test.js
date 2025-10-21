@@ -1,4 +1,4 @@
-const { mockUsers, mockEntradas, mockCompras } = require('../src/mocks/mockData');
+const { mockUsers, mockEntradas, mockCompras } = require('./mocks/mockData');
 const Usuario = require("../src/models/Usuario");
 const Entrada = require("../src/models/Entrada");
 const Compra = require("../src/Compra");
