@@ -38,16 +38,16 @@ TP6 - TDD/
 ## 🎫 Reglas de Negocio
 
 ### Precios
-- **Regular**: $5,000 (adultos) | $2,500 (niños/mayores)
-- **VIP**: $10,000 (adultos) | $5,000 (niños/mayores)
+- **Regular**: $5,000 (adultos) | $2,500 (niños de 3-10 años/mayores de 60+ años)
+- **VIP**: $10,000 (adultos) | $5,000 (niños de 3-10 años/mayores de 60+ años)
 - **Gratis**: Menores de 3 años
 
 ### Restricciones
-- ❌ Parque cerrado los **lunes**
+- ❌ Parque cerrado todos los **Lunes**
 - ❌ Parque cerrado los días **25/12** y **1/1**
 - ⏰ Horario: **9:00 AM - 7:00 PM**
 - 🎟️ Máximo **10 entradas** por compra
-- 👤 Usuario debe estar **registrado**
+- 👤 Usuario debe estar **registrado** para realizar compra
 
 ## 🚀 Instalación y Uso
 
