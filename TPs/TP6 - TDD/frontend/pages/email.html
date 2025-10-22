@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHarmony Park - Confirmación por Email</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div class="leaf-decoration leaf-1"></div>
+    <div class="leaf-decoration leaf-2"></div>
+    
+    <div class="container">
+        <div class="email-card">
+            <div class="header">
+                <div class="logo-container">
+                    <div class="email-icon">📧</div>
+                </div>
+                <h1>Confirmación Enviada</h1>
+                <p>Hemos enviado los detalles de tu compra por email</p>
+            </div>
+            
+            <div class="email-preview">
+                <div class="email-header-bar">
+                    <div class="email-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="email-title">Confirmación de Compra - EcoHarmony Park</span>
+                </div>
+                
+                <div class="email-content">
+                    <div class="email-logo-section">
+                        <div class="email-logo">🦁</div>
+                        <h2>EcoHarmony Park</h2>
+                    </div>
+                    
+                    <div class="email-greeting">
+                        <p>Hola <strong id="emailUsuario"></strong>,</p>
+                        <p>¡Gracias por tu compra! Tu reserva ha sido confirmada exitosamente.</p>
+                    </div>
+                    
+                    <div class="email-details">
+                        <h3>📋 Detalles de tu Reserva</h3>
+                        <div class="email-detail-row">
+                            <span>Fecha de Visita:</span>
+                            <strong id="emailFecha"></strong>
+                        </div>
+                        <div class="email-detail-row">
+                            <span>Hora de Visita:</span>
+                            <strong id="emailHora"></strong>
+                        </div>
+                        <div class="email-detail-row">
+                            <span>Cantidad de Entradas:</span>
+                            <strong id="emailCantidad"></strong>
+                        </div>
+                        <div class="email-detail-row">
+                            <span>Método de Pago:</span>
+                            <strong id="emailMetodo"></strong>
+                        </div>
+                        <div class="email-detail-row total-row">
+                            <span>Total Pagado:</span>
+                            <strong>$<span id="emailTotal"></span></strong>
+                        </div>
+                    </div>
+                    
+                    <div class="email-qr-section">
+                        <div class="qr-code">
+                            <div class="qr-placeholder">QR</div>
+                        </div>
+                        <p class="qr-text">Presenta este código QR en la entrada del parque</p>
+                    </div>
+                    
+                    <div class="email-info-section">
+                        <h4>ℹ️ Información Importante</h4>
+                        <ul>
+                            <li>Llega 15 minutos antes de tu hora reservada</li>
+                            <li>El parque cierra los lunes y días festivos (25/12 y 1/1)</li>
+                            <li>Horario de atención: 9:00 AM - 7:00 PM</li>
+                            <li>Trae tu documento de identidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-actions">
+                <p class="email-sent-message">✓ Email enviado a tu casilla de correo</p>
+                <button class="btn btn-primary" onclick="continuarConfirmacion()">Continuar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../javascript/email.js"></script>
+</body>
+</html>
