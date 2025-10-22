@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHarmony Park - Procesando Pago</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div class="leaf-decoration leaf-1"></div>
+    <div class="leaf-decoration leaf-2"></div>
+    
+    <div class="container">
+        <div class="mercadopago-card">
+            <div class="header">
+                <div class="logo-container">
+                    <div class="mercadopago-logo">💳</div>
+                </div>
+                <h1>Mercado Pago</h1>
+                <p>Procesando tu pago de forma segura</p>
+            </div>
+            
+            <div class="payment-processing">
+                <div class="spinner-container">
+                    <div class="spinner"></div>
+                </div>
+                <p class="processing-text">Conectando con Mercado Pago...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="payment-details">
+                <h3>📋 Detalles del Pago</h3>
+                <div class="detalle-item">
+                    <span class="detalle-label">Monto:</span>
+                    <span class="detalle-value">$<span id="montoPago"></span></span>
+                </div>
+                <div class="detalle-item">
+                    <span class="detalle-label">Método:</span>
+                    <span class="detalle-value">Mercado Pago</span>
+                </div>
+                <div class="detalle-item">
+                    <span class="detalle-label">Estado:</span>
+                    <span class="detalle-value status-processing" id="estadoPago">Procesando...</span>
+                </div>
+            </div>
+            
+            <div class="security-info">
+                <p>🔒 Transacción segura y encriptada</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../javascript/mercadopago.js"></script>
+</body>
+</html>
