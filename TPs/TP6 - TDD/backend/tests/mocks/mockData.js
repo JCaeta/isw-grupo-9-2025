@@ -1,18 +1,18 @@
 const mockUsers = [
   {
     id: 1,
-    name: "Test User",
-    email: "test@test.com"
-  }
+    name: 'Test User',
+    email: 'test@test.com',
+  },
 ];
 
 const mockEntradas = [
   {
     id: 1,
-    titulo: "Evento Test",
+    titulo: 'Evento Test',
     precio: 100,
-    disponible: true
-  }
+    disponible: true,
+  },
 ];
 
 const mockCompras = [];
