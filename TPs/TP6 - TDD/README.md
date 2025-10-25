@@ -14,20 +14,36 @@ EcoHarmony Park es un sistema que permite a los usuarios:
 ## 📂 Estructura del Proyecto
 ```
 TP6 - TDD/
-├── backend/                 # Lógica de negocio y tests
+├── backend/                    # Lógica de negocio y tests
 │   ├── src/
-│   │   ├── models/         # Clases Usuario, Entrada
-│   │   ├── Compra.js       # Lógica principal de compra
-│   │   └── emailService.js # Servicio de emails
-│   ├── tests/              # Tests unitarios con Jest
-│   └── package.json
-├── frontend/               # Interfaz web (HTML/CSS/JS)
-│   ├── index.html         # Login
-│   ├── pages/             # Páginas de compra y confirmación
-│   ├── js/                # JavaScript vanilla
-│   │   └── models/        # Clases compartidas
-│   └── css/               # Estilos
-└── README.md
+│   │   ├── models/            # Clases de modelos
+│   │   │   ├── Entrada.js     # Modelo de entrada
+│   │   │   └── Usuario.js     # Modelo de usuario
+│   │   ├── Compra.js          # Lógica principal de compra
+│   │   └── emailService.js    # Servicio de emails
+│   ├── tests/
+│   │   ├── mocks/            # Data de prueba
+│   │   │   └── mockData.js   # Datos mock para tests
+│   │   └── compra.test.js    # Tests unitarios con Jest
+│   └── package.json          # Dependencias y scripts
+├── frontend/                  # Interfaz web (HTML/CSS/JS)
+│   ├── app-ecoharmony/       # Aplicación principal
+│   ├── index.html            # Página de login
+│   ├── javascript/           # Scripts JS
+│   │   ├── models/          # Modelos compartidos
+│   │   │   ├── Compra.js
+│   │   │   ├── Entrada.js
+│   │   │   └── Usuario.js
+│   │   ├── compra.js        # Lógica de compra
+│   │   ├── confirmacion.js  # Lógica de confirmación
+│   │   └── login.js         # Lógica de login
+│   ├── pages/               # Páginas HTML
+│   │   ├── compra.html      # Página de compra
+│   │   └── confirmacion.html # Página de confirmación
+│   ├── styles/              # Estilos CSS
+│   │   └── main.css         # Estilos principales
+│   └── logo.png             # Logo del proyecto
+└── README.md                 # Documentación principal
 ```
 
 ## Documento de Estilo de código utilizado
@@ -69,14 +85,43 @@ Simplemente abrir `frontend/index.html` en tu navegador.
 - Usuario: `usuario1` | Contraseña: `pass123`
 - Usuario: `parque` | Contraseña: `ecologico`
 
+## 📋 Prerrequisitos
+
+- Node.js >= 14.0.0
+- npm >= 6.14.0
+- Navegador moderno (Chrome, Firefox, Edge)
+- Cuenta Gmail para servicio de emails
+
 ## 🧪 Tests
 
-Los tests están implementados con **Jest** y cubren:
-- ✅ Creación de entradas y usuarios
-- ✅ Cálculo de precios por edad y tipo
-- ✅ Validación de fechas y horarios
-- ✅ Límites de entradas por compra
-- ✅ Confirmación de compra con diferentes métodos de pago
+### Casos Testeados
+#### Tests de Entrada
+- ✅ Creación de objetos Entrada con edad y tipo de pase
+- ✅ Cálculo correcto de precios:
+  - Regular adulto: $5,000
+  - VIP adulto: $10,000
+  - Regular niño (8 años): $2,500
+  - VIP niño: $5,000
+  - Menor 3 años: Gratis
+  - Adulto mayor: 50% descuento
+
+#### Tests de Compra
+- ✅ Validación de usuario registrado
+- ✅ Límite máximo de 10 entradas por compra
+- ✅ Validación de horarios (9:00-19:00)
+- ✅ Validación de días:
+  - ❌ Lunes: cerrado
+  - ❌ Festivos (25/12, 1/1): cerrado
+- ✅ Confirmación de pago:
+  - Efectivo: mensaje de boletería
+  - Tarjeta: redirección a Mercado Pago
+- ✅ Envío de email de confirmación
+
+### Ejecutar Tests
+```bash
+cd backend
+npm test                 # Ejecutar tests
+```
 
 
 ## 🛠️ Tecnologías

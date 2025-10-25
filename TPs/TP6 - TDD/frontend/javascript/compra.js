@@ -200,6 +200,12 @@ function procesarPago(metodo) {
   datosCompra.metodoPago = metodo === "efectivo" ? "Efectivo en Boletería" : "Mercado Pago"
   sessionStorage.setItem("datosCompra", JSON.stringify(datosCompra))
 
-  // Redirigir a página de confirmación
-  window.location.href = "confirmacion.html"
+  // Redirigir según método de pago
+  if (metodo === "efectivo") {
+    // Si es efectivo, ir directo a email
+    window.location.href = "email.html"
+  } else {
+    // Si es Mercado Pago, ir a página de procesamiento de pago
+    window.location.href = "mercadopago.html"
+  }
 }
