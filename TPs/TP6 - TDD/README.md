@@ -14,36 +14,20 @@ EcoHarmony Park es un sistema que permite a los usuarios:
 ## 📂 Estructura del Proyecto
 ```
 TP6 - TDD/
-├── backend/                    # Lógica de negocio y tests
+├── backend/                 # Lógica de negocio y tests
 │   ├── src/
-│   │   ├── models/            # Clases de modelos
-│   │   │   ├── Entrada.js     # Modelo de entrada
-│   │   │   └── Usuario.js     # Modelo de usuario
-│   │   ├── Compra.js          # Lógica principal de compra
-│   │   └── emailService.js    # Servicio de emails
-│   ├── tests/
-│   │   ├── mocks/            # Data de prueba
-│   │   │   └── mockData.js   # Datos mock para tests
-│   │   └── compra.test.js    # Tests unitarios con Jest
-│   └── package.json          # Dependencias y scripts
-├── frontend/                  # Interfaz web (HTML/CSS/JS)
-│   ├── app-ecoharmony/       # Aplicación principal
-│   ├── index.html            # Página de login
-│   ├── javascript/           # Scripts JS
-│   │   ├── models/          # Modelos compartidos
-│   │   │   ├── Compra.js
-│   │   │   ├── Entrada.js
-│   │   │   └── Usuario.js
-│   │   ├── compra.js        # Lógica de compra
-│   │   ├── confirmacion.js  # Lógica de confirmación
-│   │   └── login.js         # Lógica de login
-│   ├── pages/               # Páginas HTML
-│   │   ├── compra.html      # Página de compra
-│   │   └── confirmacion.html # Página de confirmación
-│   ├── styles/              # Estilos CSS
-│   │   └── main.css         # Estilos principales
-│   └── logo.png             # Logo del proyecto
-└── README.md                 # Documentación principal
+│   │   ├── models/         # Clases Usuario, Entrada
+│   │   ├── Compra.js       # Lógica principal de compra
+│   │   └── emailService.js # Servicio de emails
+│   ├── tests/              # Tests unitarios con Jest
+│   └── package.json
+├── frontend/               # Interfaz web (HTML/CSS/JS)
+│   ├── index.html         # Login
+│   ├── pages/             # Páginas de compra y confirmación
+│   ├── js/                # JavaScript vanilla
+│   │   └── models/        # Clases compartidas
+│   └── css/               # Estilos
+└── README.md
 ```
 
 ## Documento de Estilo de código utilizado
