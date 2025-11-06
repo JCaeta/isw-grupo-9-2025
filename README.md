@@ -6,8 +6,6 @@
 | Aldao, Ignacio | 90020 |
 | Alem, Juan | 95698 |
 | Oviedo, Cristian Nicolas | 99666 |
-| Lescano, Tomas | 96124 |
-| Caetano, Joaquin | 76489 |
 | Dorado, Kevin | 90179 |
 | Bernahola, Rodrigo | 87479 |
 
